@@ -1,0 +1,32 @@
+1. 	POST http://localhost:8188/UniProxService.svc/comment?name=qqql
+	Host: localhost
+	Content-Type: application/json
+	Content-Length: 102
+
+	"<img src=&quot;http://theinsideword.wordpress.fos.auckland.ac.nz/files/2016/03/UOA-HC-RGB.png&quot;>"
+
+
+	
+	
+	
+2.	POST http://localhost:8188/UniProxService.svc/comment?name=qqql
+	Host: localhost
+	Content-Type: application/json
+	Content-Length: 43
+
+	"<script>alert(&quot;test&quot;);</script>"
+
+
+
+
+3.	POST http://localhost:8188/UniProxService.svc/comment?name=qqql
+	Host: localhost
+	Content-Type: application/json
+	Content-Length: 35
+
+	"Robert'); DROP TABLE Comments; --"
+
+
+
+
+

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CS335 assignment2!!!!!!!!!!!!!!!!!!!</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="people.js"></script>
+    <script src="Courses.js"></script>
+    <script src="news.js"></script>
+    <script src="notices.js"></script>
+    <script src="tabs.js"></script>
+    <script src="guestbook.js"></script>
+	<script src="dropdown.js"></script>
+    <script>
+        window.onload = getPeople();
+        window.onload = getCourses();
+        window.onload = getNews();
+        window.onload = getNotices();
+        window.onload = getGuestbook();
+		window.onload = DropdownFunction();
+
+    </script>
+
+
+</head>
+
+<body onload="getPeople(); getCourses(); getNews(); getNotices(); getGuestbook(); showTabF(); DropdownFuction(); ">
+
+    <header style="background-color: #10427a">
+        <table style="width: 100%;">
+            <tr>
+                <td width="204px" id="TabF" class="center" onclick="showTabF()">
+                    <img src="http://redsox.tcs.auckland.ac.nz/ups/logo.svg" width="204px" height="128px" />
+                </td>
+                <td width="16%" id="TabA" class="center" onclick="showTabA();">
+                    <center><font size="5px" color="white">People</font></center>
+                </td>
+                <td width="16%" id="TabB" class="center" onclick="showTabB();">
+                    <center><font size="5px" color="white">Courses</font></center>
+                </td>
+                <td width="16%" id="TabC" class="center" onclick="showTabC();">
+                    <center><font size="5px" color="white">News</font></center>
+                </td>
+                <td width="16%" id="TabD" class="center" onclick="showTabD();">
+                    <center><font size="5px" color="white">Notices</font></center>
+                </td>
+                <td width="16%" id="TabE" class="center" onclick="showTabE();">
+                    <center><font size="5px" color="white">Guest Book</font></center>
+                </td>
+                <td width="16%" id="TabG" class="center">
+                    <center>
+                        <!--dropbox-->
+						<div class="dropdown">
+							<button onclick="DropdownFunction()" class="ddmenu">&#9776;</button>
+							<div id="Dropdown" class="dropdown-content">
+								<a onclick="showTabA();">People</a>
+								<a onclick="showTabB();">Courses</a>
+								<a onclick="showTabC();">News</a>
+								<a onclick="showTabD();">Notices</a>
+								<a onclick="showTabE();">Comments</a>
+							</div>
+						</div>
+                    </center>
+                </td>
+            </tr>
+        </table>
+    </header>
+    <div id="SectionA">
+        <section>
+            <p>
+               <h1>People</h1>
+               <table id="showPeople" cellpadding="10"></table>
+            </p>
+        </section>
+    </div>
+    <div id="SectionB">
+        <section>
+            <p>
+                <h1>Courses</h1>
+                <table id="showCourses" cellpadding="10"></table>
+            </p>
+        </section>
+    </div>
+    <div id="SectionC">
+        <section>
+            <p>
+                <h1>News</h1>
+                <table id="showNews" cellpadding="10"></table>
+            </p>
+        </section>
+    </div>
+    <div id="SectionD">
+        <section>
+            <p>
+                <h1>Notices</h1>
+                <table id="showNotices" cellpadding="10"></table>
+            </p>
+        </section>
+    </div>
+    <div id="SectionE">
+        <section>
+            <p>
+                <h1>Guest Book</h1>
+                <table id="showGuestbook"></table>
+            </p>
+            <form name="guestComment" method="post" onsubmit="return postGuestbook(this)">
+                <br>
+                <h3>Guest Name</h3>
+                <input type="text" name="name">
+                <br>
+                <h3>Comment</h3>
+                <textarea name="comment" cols="40" rows="10"></textarea>
+                <br>
+                <input type="submit" name="button" placeholder="Enter your name here">
+            </form>
+        </section>
+    </div>
+    <div id="SectionF">
+        <section>
+            <p>
+                <center><h1>Welcome to New Zealand's leading computer science department. <br /> <font size="4">We pride ourselves on the excellence of our staff and our students.</font></h1></center>
+                <center><img src="https://www.cs.auckland.ac.nz/en/admin/carousels/department-of-computer-science/_jcr_content/par/carouselframe_0/img.scale.thumbnail.1230.jpg/1384897686160.jpg" /></center>
+
+                <table align="center" width="70%">
+                    <tr>
+                        <td width="50%">
+                            <h3>Staff Members</h3>
+                        </td>
+                        <td width="50%" >
+                            <h3>Computer Science Courses</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="50%">
+                            <p>&#8226; Sathiamoorthy Manoharan<br />
+                            &#8226; Radu Nicolescu</p>
+                        </td>
+                        <td width="50%">
+                            <p>&#8226; COMPSCI 335</p>
+                        </td>
+                    </tr>
+
+
+                    <tr><td width="50%"><br /><br /></td></tr>
+                    <tr>
+                        <td width="50%">
+                            <h3>News</h3>
+                        </td>
+                        <td width="50%">
+                            <h3>Notices</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="50%">
+                            <p>
+                                Developing Software-based Solutions and Infrastructures for Community Resilience Assessment (PHD Scholarship)<br />
+                                <a href="https://www.cs.auckland.ac.nz/en/about/newsandevents/news/news-2016/2015/10/developing-software-based-solutions-and-infrastructures-for-comm.html">READ</a>.
+                            </p>
+                        </td>
+                        <td width="50%">
+                            <p>New Science information<br />
+                            <a href="http://www.science.auckland.ac.nz/en/about/notices/notices-2016/09/new-science-information.html">READ</a>.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </p>
+        </section>
+    </div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
